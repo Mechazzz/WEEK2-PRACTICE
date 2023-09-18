@@ -6,29 +6,22 @@
 
 body {
     background-color: #FFEEDF;
-
-    display: flex; /* placing the childrens at the center of the parent element */
-    justify-content: center;
-    align-items: center;
-   /*  flex-direction: row; */ /* places the childrens on the vertical axis instead of horizontal (ha column-ot adok meg) */
-
-    height: 100vh; /* sets the target elements height to 100 (100%) viewport height */
 }
 
 button {
     background-color: #1C5A4E;
     width: 240px;
     height: 240px;
-    border-radius: 120px;
+    border-radius: 120px; /* making radius out of elements corners */
     color: #FFEEDF;
     font-size: 200px;
     font-family: 'Montserrat', sans-serif;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    font-weight: 300;
+    position: absolute; /* taking th element out of the rendering flow */
+    top: 50%; /* placing the element that much away from the top edge of the viewport */
+    left: 50%;
 
-span {
-    height: 270px;
+    transform: translate(-50%, -50%); /* Visszabb igazitottuk hogy kozepen legyen */
+    /* moves away the element that much from themself */
+    /* Mivel nem irtunk mas positiont, ezert most a viewporthoz nezi */
 }
