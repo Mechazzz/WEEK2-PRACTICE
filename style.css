@@ -24,4 +24,13 @@ button {
     transform: translate(-50%, -50%); /* Visszabb igazitottuk hogy kozepen legyen */
     /* moves away the element that much from themself */
     /* Mivel nem irtunk mas positiont, ezert most a viewporthoz nezi */
+
+}
+
+span {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+
+    transform: translateX(-50%);
 }
