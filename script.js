@@ -51,3 +51,5 @@ rootElement.insertAdjacentHTML('beforeend', htmlContent ") */
     rootElement.insertAdjacentHTML('beforeend', `<h2> ${array[0]}</h2>` );
   } */
   /* az előző koddal az index értékét használtuk fel. Ott van egy tömbünk aminek van x eleme (most 7 eleme  0-tól 6-ig). Az összes elemét fel akarjuk használni. Ciklust indítunk, megmondjuk neki hogy 0-tól induljon és az iteraciok addig mennek amiíg kisebb mint az array hossza (most 7 a hossza) és minden iteráció végén növelje az értéket eggyel. H2 tagben jelenjen meg az array indexedik eleme */
+
+  
