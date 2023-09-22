@@ -1,3 +1,34 @@
-body {
-    background-color: aquamarine;
+* {
+    margin: 0;  /* az elem koze tesz egy margot, annyival el lesz tolva a masik elem */
+    padding: 0; /* az elkem belsejebe teszi az eltolást, az elemen belül tolja be az elemeket (Tartalmat) a szélétől */
+    box-sizing:border-box; /* amikor az elem mereteit allitjuk akkor a valos mereteit adjuk meg (nem pedig az hogy van merete es hozzaadodik a padding meg a tobbi) */
+}
+
+/* ha azt akarom hogy a counttryra vonatkozzon a flex akkor a szulore kell raraknom amit a root */
+#root {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* ha nem fer ki a sorba asziveg, egymas ala tori */
+    gap: 50px; /* csak az elemek koze teszi a helyet nem az elemek melle */
+    justify-content: center;  /* kozepre zarja a kontentet */
+    align-items: center; /* kozepre zarja a kontentet */
+    padding: 20px;
+}
+
+.country {
+    width: 300px;
+    border: 1px solid black; /* border vastagsaga, hogy nezzen ki a border, border szine */
+    padding: 20px;
+    min-height: 160px;
+}
+
+/* box modell: nem az elemet meretezzuk hanem a benne levo kontentet */
+
+.country h2 {
+    min-height: 80px;
+    text-align: center;
+}
+
+.country  p {
+    text-align: center;
 }
