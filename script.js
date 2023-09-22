@@ -1,124 +1,53 @@
-let stringVariable = "text";
-let numberVariable = 15;
-let booleanVariable = true;
+console.log('loaded')
 
-function myFunc(param1, param2) {
-  return param1 + param2;
-}
+/* Megkeres a selectorral egy elemet a HTML oldalunkon: */
+/* Stringkent kell megadni, ha div akkor meg keresi az elso divc elemet, ha .button-al adjuk meg akkor megkeresi a legelso div-et a button classal, ha #root --> barmelyik elemen van, az elsot visszaadja */
+/* most a root elemet ragadom meg : */
+/* amit visszaad, celszeru valtozoba kimenteni let rootElement */
+let rootElement = document.querySelector('#root')
+/* igy benne lesz a HTML-ben az element amit megtalal */
+/* kilogolom consol segitségével */
+/* console.log(rootElement) */
+/* HTML-be a script-hez beadtam a refer-t, ez azert kell mert kulonben a script tul gyorsan lefut, de a defer altal a html vegere helyezi a kodot, igy a body utan fut le a script-es kodom es akkor megtalalja a javascriptes elemet */
+/* a kovetkezo kod HTML kodot illeszt be az elembe, position es text parametereket var. Positionnak elore megadott ertekeket tudunk megadni '' jelben, 4 opciobol tudok valasztani. 2. parameternekstringet var */
+ /* 2. parameternel ha ide irjuk nem kapukn kodkiegeszitest */
+// rootElement.insertAdjacentHTML('beforeend', "<h2> Hello world, my name is Istvan </h2>")
+/* DOM manipulaltunk */
+/* HTML string valtozoba kimentese: */
+/* let htmlContent = "<h2> Hello world, my name is Istvan </h2>" */
+/* ezt rakom be utana a 14 es sor 2-ik parameterebe */
+/* rootElement.insertAdjacentHTML('beforeend', "<h2> Hello world, my name is Istvan </h2>")
+rootElement.insertAdjacentHTML('beforeend', htmlContent )
+rootElement.insertAdjacentHTML('beforeend', htmlContent ") */
+/* amikor egy kodott tobbszor futtatunk le, ciklusoknak hivjuk, szamlalo segitsegevel tudjuk a legegyszerubben: */
+/* let counter = 0; */
 
-console.log(stringVariable); /* valtozo neve */
-console.log("stringVariable"); /* ez egy érték */
+/* elindul w hile ciklus csekkolja a kondiciot, utana megint lefut, counter = counter +1 helyett counter++ (eggyel noveli ac ounter erteket) */
+/* while(counter < 20) {
+  rootElement.insertAdjacentHTML('beforeend', htmlContent )
+  counter++ ;
+} */
 
-console.log(stringVariable, numberVariable, booleanVariable);
+/* for negyzetet kivalaszt es kiadja ezt. For ciklus: kell egy kezdoertek egy valtozoval, adunk egy feltetelt amit mindig lecsekkol minden futas utan, minden futas vegen lefuttat egy kodot ami megvaltoztatja a valtozot */
+/* most tizig futtatom  */
+/* for (let counter = 1; counter <= 10; counter++) {
+  console.log(counter)
+} */
+/* minden egyes iteracioban ( ciklusnak iteracioi vannak) fusson le a kod amit megirtunk: */
+/* for (let counter = 1; counter <= 10; counter++) {
+  rootElement.insertAdjacentHTML('beforeend', htmlContent )
+} */
+  /* a for ciklust hasznaljuk most, nem a whilet, pl a for jo hogy egy tombon vegigmenjunk, kiirjuk az ertekeit */
 
-/* A tomb egy rendezett lista szamit a sorrenmdje a benne levo ertekeknek.
-Mar nem egy primitiv, tobb kulonbozo adatot tartalmaz
-Tomb : */
-let array = ["alma", 12, false, undefined, null];
+/*   let array = ["alma", "körte", "szilva", "eper", "birs", "vegyes"]
+  for (let counter = 1; counter <= 10; counter++) {
+    rootElement.insertAdjacentHTML('beforeend', `<h2> ${array[0]}</h2>` )
+  } */
+  /* az elobb kiirattam a tomb egyik elemet 10 szer */
 
-console.log(array);
-
-/* indexek               0            1            2                 3  */
-let stringArray = ["Imola Ács", "Pali Herrer", "Nagy Zsombor", "Ágota Bokor"];
-console.log(stringArray);
-console.log(
-  stringArray[0]
-); /* index a 0 , eszerint jeleniti meg a dolgokat a fuggveny, 0 tol indulnek az indexek*/
-
-/* Objektum, az objektum jele a kapcsos zarojel. AZ  objektumban nem csak adatok vannak felsorolva, hanem kulcs-ertek parok */
-let myObj = {
-  key1: "value1",
-  key2: "value2",
-  key3: "value3",
-  key4: 15,
-  key5: 600,
-  key6: true,
-  key7: ["Imola Ács", "Pali Herrer", "Nagy Zsombor", "Ágota Bokor"],
-};
-
-console.log(myObj);
-/* . notationnal erjuk el a leggyorsabban a kulcsok ertekeit. */
-console.log(myObj.key7);
-console.log(myObj.key7[2]);
-
-let myFacebook = {
-  name: "Bakó István",
-  age: 29,
-  location: "Budapest",
-  friends: ["Gipsz Jakab", "John Doe", "Példa Péter"],
-  favouriteFilms: [
-    {
-      title: "Harry Potter",
-      year: 2001,
-      characters: ["Harry Potter", "Ronald Weasley", "Hedvig"],
-    },
-    {
-      title: "Ananász Express",
-      year: 2012,
-      characters: ["Seth Rogen", "Péter"],
-    },
-    {
-      title: "Üvegtigris",
-      year: 2004,
-      characters: ["Józsi", "Béla"],
-    },
-  ],
-};
-
-console.log(myFacebook.favouriteFilms[0].characters[1]);
-/* Ha objektumbol akarok kulcsot megkapni : dot notation . Ha tombbel ter vissza a fuggveny akkor szogletes zarojel. Ha objektummal ter vissza akkor dot notation, ha tombbel akkor szogletes zarojel */
-
-let myArr = [
-  ["Alma", "Körte", "Szilva"],
-  ["Dreher", "Kőbányai", "Kanizsai sör"],
-  ["Mizse", "Szentkirályi", "Tesco gazd"],
-];
-
-console.log(myArr[1][2]);
-
-/* Hazi fuzetben */
-
-
-/* Feltetelek */
-function negativOrPositive (number) {
-    if (number < 0) {
-        return "negative"
-    } else if (number > 0) {
-        return "positive"
-    } else {
-        return "zero"
-    }
-}   
-
-function logger(text) {
-    console.log(text)
-}
-
-logger(negativOrPositive(0))
-
-function decideIfBeerIsGood (beer) {
-    /* beer = [name: "Dreher", price: 349, abv:5] */
-    /* ha && (es) jel van akkor mindket feltetelnek teljesulnie kell vagy nem teljesul */
-    /* ha || (vagy jel) ha az egyik feltetel teljesul az mar eleg, akkor igaz az allitas */
-    /* Fontos hogy sorrendben nézi a feltételeket a js, csak akkor nezi meg a következöt ha az elözö nem teljesül. ha barhol tallakozik a return szoval akkor vege a fuggvenynek */
-    if (beer.price < 340 && beer.abv > 4.7) {
-        return beer.name + ": jo sor mert olcso es ut"
-    } else if (beer.price < 340) {
-        return beer.name + ": jo sor mert olcso"
-    } else if (beer.abv > 4.7) {
-        return beer.name + ": jo sor mert ut"
-    } else {
-        return beer.name + ": nem jo"
-    }
-
-}
-
-let dreher = {name: "Dreher", price: 349, abv:5 }
-let soproni ={name: "Soproni", price: 329, abv: 4.5 } 
-let borsodi= {name: "Borsodi", price: 339, abv: 4.8 }
-let pécsi = {name:"Pécsi", price: 379, abv:4.2 }
-
-logger(decideIfBeerIsGood(dreher))
-logger(decideIfBeerIsGood(soproni))
-logger(decideIfBeerIsGood(borsodi))
-logger(decideIfBeerIsGood(pécsi))
+  /*  indexek:    0       1         2         3     4         5  */
+/*   let array = ["alma", "körte", "szilva", "eper", "birs", "vegyes"]
+  for (let index = 0; index < array.length; index++) {
+    rootElement.insertAdjacentHTML('beforeend', `<h2> ${array[0]}</h2>` );
+  } */
+  /* az előző koddal az index értékét használtuk fel. Ott van egy tömbünk aminek van x eleme (most 7 eleme  0-tól 6-ig). Az összes elemét fel akarjuk használni. Ciklust indítunk, megmondjuk neki hogy 0-tól induljon és az iteraciok addig mennek amiíg kisebb mint az array hossza (most 7 a hossza) és minden iteráció végén növelje az értéket eggyel. H2 tagben jelenjen meg az array indexedik eleme */
